@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/admin/{id}(id=${user.getId()})}" th:object="${user}">
+    <label for="firstName">Name:</label>
+    <input type="text" th:field="*{firstName}" id="firstName">
+    <br/>
+
+    <label for="lastName">Last name:</label>
+    <input type="text" th:field="*{lastName}" id="lastName">
+    <br/>
+
+    <label for="age">Age:</label>
+    <input type="text" th:field="*{age}" id="age">
+    <br/>
+
+    <label for="email">Email:</label>
+    <input type="text" th:field="*{email}" id="email">
+    <br/>
+
+    <label for="password">Password:</label>
+    <input type="text" th:field="*{password}" id="password">
+    <br/>
+
+    <label for="role">Select role:</label>
+    <select id="role" th:field="*{roles}" multiple>
+        <option th:each="role : ${role}" th:value="${{role}}" th:text="${role.role}"/>
+    </select>
+    <br/>
+
+    <input type="submit" value="Edit">
+</form>
+</body>
+</html>
