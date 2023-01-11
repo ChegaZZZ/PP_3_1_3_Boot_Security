@@ -8,18 +8,21 @@
 </head>
 
 <body>
-<h1>User, welcome spring boot security page!</h1>
+<h1>Добро пожаловать мой господин!</h1>
 
 <p th:text="${user.getId()}">Id</p>
 <p th:text="${user.getFirstName()}">First name</p>
 <p th:text="${user.getLastName()}">Last name</p>
 <p th:text="${user.getAge()}">Age</p>
 <p th:text="${user.getRoles()}">Roles</p>
+<p th:text="${user.getEmail()}">Email</p>
 <p th:text="${user.getPassword()}">Password</p>
 
 <br/>
 <hr/>
 
-<a href="/logout" type="submit">Logout</a>
+<a href="/logout">
+    <input type="submit" value="Logout"/>
+</a>
 </body>
 </html>
